@@ -79,15 +79,17 @@ def is_blank_row(row):
     return True
 
 
+def text_lookup(cell):
+    value = cell.value
+    if value is None:
+        return None
+    else:
+        return re.sub("\\s+", " ", value).strip()
+
+
 def parse_spreadsheet(path):
     workbook = openpyxl.load_workbook(path)
     worksheet = workbook.active
-
-    number_index = None
-    name_index = None
-    description_index = None
-    address_index = None
-    comment_index = None
 
     header_row = [cell.value.strip() for cell in worksheet.rows[1]]
     number_index = header_row.index("Permit Number")
@@ -99,30 +101,28 @@ def parse_spreadsheet(path):
     for row in worksheet.rows[2:]:
         if is_blank_row(row):
             continue
-
-        def text_lookup(index):
-            value = row[index].value
-            if value is None:
-                return None
-            else:
-                return re.sub("\\s+", " ", value).strip()
-
-        permit = Permit(text_lookup(number_index),
-                        text_lookup(name_index),
-                        text_lookup(description_index),
-                        text_lookup(address_index),
-                        text_lookup(comment_index))
-        if permit.description == "FIREWORKS DISPLAY - ONE TIME":
-            if "INDOOR" in permit.comment:
-                continue
+        permit = Permit(text_lookup(row[number_index]),
+                        text_lookup(row[name_index]),
+                        text_lookup(row[description_index]),
+                        text_lookup(row[address_index]),
+                        text_lookup(row[comment_index]))
         yield permit
+
+
+def filter_unwanted_permits(permits):
+    for permit in permits:
+        if (permit.description == "FIREWORKS DISPLAY - ONE TIME" and
+                "INDOOR" in permit.comment):
+            continue
+        else:
+            yield permit
 
 
 def parse_data():
     for f in os.listdir(DIRECTORY):
         path = os.path.join(DIRECTORY, f)
         if os.path.isfile(path) and path.endswith(".xlsx"):
-            yield from parse_spreadsheet(path)
+            yield from filter_unwanted_permits(parse_spreadsheet(path))
 
 
 def write_icalendar(events):

@@ -89,19 +89,12 @@ def parse_spreadsheet(path):
     address_index = None
     comment_index = None
 
-    for i, cell in enumerate(worksheet.rows[1]):
-        if cell.value:
-            text = cell.value.strip()
-            if text == "Permit Number":
-                number_index = i
-            elif text == "Permit Name":
-                name_index = i
-            elif text == "Description":
-                description_index = i
-            elif text == "Permit Street Address":
-                address_index = i
-            elif text == "Comment Text":
-                comment_index = i
+    header_row = [cell.value.strip() for cell in worksheet.rows[1]]
+    number_index = header_row.index("Permit Number")
+    name_index = header_row.index("Permit Name")
+    description_index = header_row.index("Description")
+    address_index = header_row.index("Permit Street Address")
+    comment_index = header_row.index("Comment Text")
 
     for row in worksheet.rows[2:]:
         if is_blank_row(row):

@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.4"
+sudo: false
+install: pip install -r requirements.txt
+script: pyflakes ./*.py
+notifications:
+  email:
+    recipients:
+      - divergentdave@gmail.com
+    on_success: change
+    on_failure: change

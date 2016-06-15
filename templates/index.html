@@ -18,7 +18,7 @@
 {% for event in events %}
 {% if event.date > today and event.date < end_date %}
 <li>
-{{event.date}}: {{event.name}} at {{event.address}}
+{{ event.date.strftime("%B %-d, %Y") }}: {{ event.name }}
 </li>
 {% endif %}
 {% endfor %}

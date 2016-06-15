@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/milligram.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <section class="container">
@@ -12,6 +13,16 @@
 <p>I am asking the City of Minneapolis for the fireworks permits they have issued and posting about them online. You can follow <a href="https://twitter.com/FireworksInMpls">@FireworksInMpls</a> on Twitter for updates. I typically tweet once around noon the day of the fireworks, and once 15-30 minutes before the fireworks.</p>
 <p>You can add the firework permits to your calendar program. <a href="webcals://davidsherenowitsa.party/fireworks/fireworks.ics">Add as a web calendar</a> or <a href="https://davidsherenowitsa.party/fireworks/fireworks.ics">view the iCalendar file directly</a>.</p>
 <p>I have also posted the <a href="data/">raw spreadsheets</a> I received from the City of Minneapolis, if you would like more details.</p>
+<h3>Upcoming Fireworks</h3>
+<ul>
+{% for event in events %}
+{% if event.date > today and event.date < end_date %}
+<li>
+{{event.date}}: {{event.name}} at {{event.address}}
+</li>
+{% endif %}
+{% endfor %}
+</ul>
 </section>
 </body>
 </html>

@@ -37,24 +37,39 @@ class Permit(object):
                 string = "%s %s %s" % (month, date, year)
                 yield datetime.datetime.strptime(string, "%B %d %Y").date()
 
-    def ical_event_iter(self):
+    def event_iter(self):
         for i, date in enumerate(self.dates_iter()):
-            event = icalendar.Event()
             uid = ("fireworks-%s-%d@davidsherenowitsa.party" %
                    (self.number, i))
-            event.add("uid", uid)
-            event.add("summary", "Fireworks: %s" % self.name)
-            event.add("dtstart", date)
-            event.add("dtend", date)
-            event.add("location", self.address)
-            event.add("description", self.comment)
-            yield event
+            yield Event(uid, self.name, date, self.address, self.comment)
 
     def __str__(self):
         return "%s, \"%s\", \"%s\", \"%s\"" % (self.number,
                                                self.name,
                                                self.address,
                                                self.comment)
+
+
+class Event(object):
+    def __init__(self, uid, name, date, address, comment):
+        self.uid = uid
+        self.name = name
+        self.date = date
+        self.address = address
+        self.comment = comment
+
+    def to_ical(self):
+        event = icalendar.Event()
+        event.add("uid", self.uid)
+        event.add("summary", "Fireworks: %s" % self.name)
+        event.add("dtstart", self.date)
+        event.add("dtend", self.date)
+        event.add("location", self.address)
+        event.add("description", self.comment)
+        return event
+
+    def __lt__(self, other):
+        return self.date < other.date
 
 
 def is_blank_row(row):
@@ -117,30 +132,38 @@ def parse_data():
             yield from parse_spreadsheet(path)
 
 
-def write_icalendar(permits):
+def write_icalendar(events):
     cal = icalendar.Calendar()
     cal.add("prodid", "-//Fireworks in Minneapolis//davidsherenowitsa.party//")
     cal.add("version", "1.0")
     cal.add("summary", "Fireworks in Minneapolis")
-    for permit in permits:
-        for event in permit.ical_event_iter():
-            cal.add_component(event)
+    for event in events:
+        cal.add_component(event.to_ical())
     ics_file = open(ICS_PATH, "wb")
     ics_file.write(cal.to_ical())
     ics_file.close()
 
 
-def write_html(permits):
+def write_html(events):
+    today = datetime.date.today()
+    end_date = datetime.date.today() + datetime.timedelta(days=31)
     loader = jinja2.FileSystemLoader("templates")
     env = jinja2.Environment(loader=loader, autoescape=True)
     template = env.get_template("index.html")
-    template.stream(permits=permits).dump("index.html")
+    stream = template.stream(events=events, today=today, end_date=end_date)
+    stream.dump("index.html")
+
+
+def permits_to_events(permits):
+    for permit in permits:
+        yield from permit.event_iter()
 
 
 def main():
-    permits = parse_data()
-    write_icalendar(permits)
-    write_html(permits)
+    events = list(permits_to_events(parse_data()))
+    events.sort()
+    write_icalendar(events)
+    write_html(events)
 
 if __name__ == "__main__":
     main()

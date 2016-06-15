@@ -47,7 +47,7 @@ fi
 
 set -e
 
-.virtualenv/bin/flake8 *.py
+.virtualenv/bin/flake8 ./*.py
 
 # If there are whitespace errors, print the offending file names and fail.
 exec git diff-index --check --cached $against --

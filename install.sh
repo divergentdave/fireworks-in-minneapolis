@@ -3,11 +3,11 @@ set -e
 TOPLEVEL=$(git rev-parse --show-toplevel)
 if [ ! -d "$TOPLEVEL/.virtualenv" ]
 then
-    python3 -m virtualenv --version >/dev/null || {sudo pip install virtualenv}
-    python3 -m virtualenv $TOPLEVEL/.virtualenv
+    python3 -m virtualenv --version >/dev/null || { sudo pip install virtualenv; }
+    python3 -m virtualenv "$TOPLEVEL/.virtualenv"
 fi
-$TOPLEVEL/.virtualenv/bin/pip install -r $TOPLEVEL/requirements.txt
-if [ ! -f $TOPLEVEL/.git/hooks/pre-commit ]
+"$TOPLEVEL/.virtualenv/bin/pip" install -r "$TOPLEVEL/requirements.txt"
+if [ ! -f "$TOPLEVEL/.git/hooks/pre-commit" ]
 then
-    ln -s $TOPLEVEL/pre-commit.sh $TOPLEVEL/.git/hooks/pre-commit
+    ln -s "$TOPLEVEL/pre-commit.sh" "$TOPLEVEL/.git/hooks/pre-commit"
 fi

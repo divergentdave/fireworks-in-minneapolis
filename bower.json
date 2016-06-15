@@ -1,0 +1,18 @@
+{
+  "name": "fireworks-in-minneapolis",
+  "authors": [
+    "David Cook <divergentdave@gmail.com>"
+  ],
+  "homepage": "https://davidsherenowitsa.party/fireworks/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "milligram": "^1.1.0"
+  }
+}

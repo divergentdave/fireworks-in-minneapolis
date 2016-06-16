@@ -1,5 +1,6 @@
 .*.swp
 
+/.virtualenv
 /bower_components
 /deploy
 

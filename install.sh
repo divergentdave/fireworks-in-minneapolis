@@ -7,6 +7,7 @@ then
     python3 -m virtualenv -p python3 "$TOPLEVEL/.virtualenv"
 fi
 "$TOPLEVEL/.virtualenv/bin/pip" install -r "$TOPLEVEL/requirements.txt"
+bower --version >/dev/null || { sudo npm install -g bower; }
 if [ ! -f "$TOPLEVEL/.git/hooks/pre-commit" ]
 then
     ln -s "$TOPLEVEL/pre-commit.sh" "$TOPLEVEL/.git/hooks/pre-commit"

@@ -28,6 +28,20 @@ class Permit(object):
             self.address = self.address + ", Minneapolis, MN"
         self.comment = comment
 
+    def __eq__(self, other):
+        return (self.number, self.name, self.description, self.address,
+                self.comment) == (other.number, other.name, other.description,
+                                  other.address, other.comment)
+
+    def __lt__(self, other):
+        return (self.number, self.name, self.description, self.address,
+                self.comment) < (other.number, other.name, other.description,
+                                 other.address, other.comment)
+
+    def __hash__(self):
+        return hash((self.number, self.name, self.description, self.address,
+                     self.comment))
+
     def dates_iter(self):
         for match in DATE_RE.finditer(self.comment):
             month = match.group(1)
@@ -125,6 +139,10 @@ def parse_data():
             yield from filter_unwanted_permits(parse_spreadsheet(path))
 
 
+def deduplicate(permits):
+    return sorted(set(permits))
+
+
 def write_icalendar(events):
     cal = icalendar.Calendar()
     cal.add("prodid", "-//Fireworks in Minneapolis//davidsherenowitsa.party//")
@@ -153,7 +171,7 @@ def permits_to_events(permits):
 
 
 def main():
-    events = list(permits_to_events(parse_data()))
+    events = list(permits_to_events(deduplicate(parse_data())))
     events.sort()
     write_icalendar(events)
     write_html(events)

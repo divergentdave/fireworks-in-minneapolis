@@ -22,9 +22,9 @@
 <h3>Upcoming Fireworks</h3>
 <ul>
 {% for event in events %}
-{% if event.date > today and event.date < end_date %}
+{% if event.date >= today and event.date < end_date %}
 <li>
-{{ event.date.strftime("%B %-d, %Y") }}: {{ event.name }}
+{{ event.date.strftime("%B %-d, %Y") }}: {{ event.name }}, at {{ event.address }}
 </li>
 {% endif %}
 {% endfor %}

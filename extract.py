@@ -213,7 +213,9 @@ def write_html(events):
     loader = jinja2.FileSystemLoader("templates")
     env = jinja2.Environment(loader=loader, autoescape=True)
     template = env.get_template("index.html")
-    stream = template.stream(events=events, today=today, end_date=end_date)
+    upcoming_events = [event for event in events
+                       if event.date >= today and event.date < end_date]
+    stream = template.stream(events=upcoming_events)
     stream.dump("index.html")
 
 

@@ -137,6 +137,10 @@ def parse_spreadsheet(path):
         description_index = None
         address_index = None
         comment_index = header_row.index("Event Details")
+    elif path.endswith("201609.xlsx"):
+        # No permit numbers in this spreadsheet, see data/other.yaml for
+        # re-entered data
+        return
 
     for row in worksheet.rows[2:]:
         if is_blank_row(row):

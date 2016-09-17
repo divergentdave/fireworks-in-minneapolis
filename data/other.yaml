@@ -11,3 +11,14 @@ aquatennial-target-fireworks-2016:
     date: "2016-07-23"
     address: "1 3rd Avenue S, Minneapolis, MN 55404"
     comment: "Fireworks will be at 10:00 PM."
+# Data from September, 2016 spreadsheet
+gopher-half-time-september-1-2016:
+    name: "Mariucci Plaza Gopher Half Time"
+    date: "2016-09-01"
+    address: "1901 4th St SE, Minneapolis, MN 55455"
+    comment: "Fireworks will be at 9:15-9:30 PM."
+church-of-st-helena-autumn-daze-2016:
+    name: "Church of St. Helena: Autumn Daze"
+    date: "2016-09-16"
+    address: "3204 43rd St E, Minneapolis, MN 55406"
+    comment: "Fireworks will be at 10:00-10:20 PM."

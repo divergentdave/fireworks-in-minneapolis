@@ -124,7 +124,8 @@ def parse_spreadsheet(path):
     workbook = openpyxl.load_workbook(path)
     worksheet = workbook.active
 
-    header_row = [text_lookup(cell) for cell in worksheet.rows[1]]
+    rows = list(worksheet.rows)
+    header_row = [text_lookup(cell) for cell in rows[1]]
     if path.endswith("201606.xlsx"):
         number_index = header_row.index("Permit Number")
         name_index = header_row.index("Permit Name")
@@ -142,7 +143,7 @@ def parse_spreadsheet(path):
         # re-entered data
         return
 
-    for row in worksheet.rows[2:]:
+    for row in rows[2:]:
         if is_blank_row(row):
             continue
         permit_number = text_lookup(row[number_index])
@@ -249,6 +250,7 @@ def main():
 
     write_icalendar(events)
     write_html(events)
+
 
 if __name__ == "__main__":
     main()

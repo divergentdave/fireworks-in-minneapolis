@@ -227,3 +227,8 @@ holidazzle-2018-5:
     date: "2018-12-22"
     address: "1382 Willow St, Minneapolis, MN 55403"
     comment: "Fireworks will be at 7:00 PM."
+polar-plunge-2019:
+    name: "Minneapolis Polar Plunge"
+    date: "2019-03-01"
+    address: "West Calhoun Parkway, Minneapolis, MN 55408"
+    comment: "Fireworks will be at 7:00 PM."

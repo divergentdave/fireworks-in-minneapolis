@@ -232,3 +232,18 @@ polar-plunge-2019:
     date: "2019-03-01"
     address: "West Calhoun Parkway, Minneapolis, MN 55408"
     comment: "Fireworks will be at 7:00 PM."
+mprb-red-white-and-boom-2019:
+    name: "Red, White and Boom"
+    date: "2019-07-04"
+    address: "2 Third Ave SE, Minneapolis, MN 55455"
+    comment: "Hosted by the Minneapolis Park and Recreation Board. Fireworks will be at 10:00 PM. Address is approximate, fireworks will be shot from Xcel Energy Water Power Park."
+minikahda-club-2018-07-04:
+    name: "Minikahda Club 4th of July Fireworks"
+    date: "2019-07-04"
+    address: "3205 Excelsior Boulevard, Minneapolis, MN 55416"
+    comments: "Fireworks are usually at 10:00 PM."
+aquatennial-target-fireworks-2019:
+    name: "Aquatennial Target Fireworks"
+    date: "2019-07-27"
+    address: "1 3rd Avenue S, Minneapolis, MN 55404"
+    comment: "Fireworks will be at 10:00 PM."

@@ -1,6 +1,58 @@
-# This file is used to manually enter fireworks shows that weren't reported
-# in any of the permit data. Events discovered through other means will be
-# entered here, and then be incorporated into the iCalendar file and web page.
+164754-0:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-06-03"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+165005-0:
+    name: "June 4 2016 Minihahda Club Pyro"
+    date: "2016-06-04"
+    address: "3205 Excelsior Blvd, Minneapolis, MN"
+    comment: "THE MINIKAHDA CLUB: 10:00PM/3205 EXCELSIOR BOULEVARD MINNEAPOLIS, MN 55416. Date of Event: June 4, 2016. 10:00pm."
+164754-1:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-06-10"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+164754-2:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-06-17"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+164964-0:
+    name: "Twin Cities Pride Festival 2016"
+    date: "2016-06-25"
+    address: "2021 Hennepin Ave E, Minneapolis, MN"
+    comment: "FIREWORKS DISPLAY - OUTDOOR: TWIN CITIES PRIDE JUNE 25, 2016. 10PM. LORING PARK, MINNEAPOLIS, MN."
+164754-3:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-07-01"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+165207-0:
+    name: "Outdoor Fireworks July 4 2016"
+    date: "2016-07-04"
+    address: "3205 Excelsior Boulevard, Minneapolis, MN"
+    comment: "PRECOCIOUS PYROTECHNICS INC: JULY 4TH, 2016, APPLIES FOR PERMIT TO ALLOW: FIREWORKS DISPLAY - OUTDOOR. THE EVENT START TIME: 10:00PM. THE EVENT SET UP START TIME: 2:00PM. THE EVENT ADDRESS: 3205 EXCELSIOR BOULEVARD. THE EVENT CONTACT: THOMAS LODERMAIN OR GARRY HANSON PHONE: 320-346-2201."
+164754-4:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-07-15"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+164754-5:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-07-29"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+164754-6:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-08-12"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
+164754-7:
+    name: "Twins Post Game Fireworks Displays"
+    date: "2016-09-02"
+    address: "353 5th St N, Minneapolis, MN"
+    comment: "TWINS POST GAME FIREWORKS DISPLAYS. TARGET FIELD: 1 TWINS WAY. PYRO AFTER TWIN GAMES 12-13 MINUTES. JUNE 3, 10, 17, 2016 / PYRO. JULY 1, 15, 29, 2016. / PYRO. AUGUST 12, 2016 & SEPTEMBER 2, 2016. / PYRO."
 mprb-red-white-and-boom-2016:
     name: "Red, White and Boom"
     date: "2016-07-04"

@@ -1,6 +1,4 @@
 flake8
 icalendar
-openpyxl
 pyyaml
-titlecase
 Jinja2

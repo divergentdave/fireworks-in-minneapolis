@@ -68,7 +68,7 @@ def write_html(events):
 
 
 def load_extra_events():
-    data = yaml.load(open(os.path.join(DIRECTORY, "other.yaml")))
+    data = yaml.safe_load(open(os.path.join(DIRECTORY, "other.yaml")))
     for id_, obj in data.items():
         uid = "fireworks-%s@davidsherenowitsa.party" % id_
         date = datetime.datetime.strptime(obj["date"], "%Y-%m-%d").date()

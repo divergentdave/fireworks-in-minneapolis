@@ -364,3 +364,23 @@ aquatennial-target-fireworks-2022:
     date: "2022-07-23"
     address: "1 3rd Avenue S, Minneapolis, MN 55404"
     comment: "Fireworks will be at 10:00 PM."
+holidazzle-2022-1:
+    name: "Holidazzle"
+    date: "2022-11-26"
+    address: "1382 Willow St, Minneapolis, MN 55403"
+    comment: "Fireworks will be at 7:15 PM."
+holidazzle-2022-2:
+    name: "Holidazzle"
+    date: "2022-12-03"
+    address: "1382 Willow St, Minneapolis, MN 55403"
+    comment: "Fireworks will be at 7:15 PM."
+holidazzle-2022-3:
+    name: "Holidazzle"
+    date: "2022-12-10"
+    address: "1382 Willow St, Minneapolis, MN 55403"
+    comment: "Fireworks will be at 7:15 PM."
+holidazzle-2022-4:
+    name: "Holidazzle"
+    date: "2022-12-17"
+    address: "1382 Willow St, Minneapolis, MN 55403"
+    comment: "Fireworks will be at 7:15 PM."
